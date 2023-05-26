@@ -31,7 +31,6 @@ class _NFTDetailsPageState extends State<NFTDetailsPage> {
     final url = Uri.parse('https://api.coingecko.com/api/v3/nfts/${widget.id}');
     final response = await http.get(url);
 
-    print(response.statusCode);
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
       setState(() {
